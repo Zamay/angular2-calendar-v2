@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-years',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YearsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  onSelect(selected: any) {
+    this.router.navigate(["months"]);
+    // this.router.navigate(["months", selected.id]);
+  }
+
+  goBack(): void {
+    this.router.navigate(["decate"]);
+  }
 }
