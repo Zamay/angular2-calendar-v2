@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 
+import {DataService} from "../service/data.service";
+
 @Component({
   selector: 'app-decade',
   templateUrl: './decade.component.html',
@@ -8,9 +10,14 @@ import {Router} from "@angular/router";
 })
 export class DecadeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public years: Array<any>;
+  constructor(
+    private router: Router,
+    private dateService :DataService
+  ) { }
 
   ngOnInit() {
+    this.years = this.dateService.getTenYears();
   }
 
   onSelect(selected: any) {

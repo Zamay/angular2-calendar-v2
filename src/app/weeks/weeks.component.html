@@ -1,3 +1,3 @@
-<p>
-  weeks works!
+<p *ngFor="let weekday of weeks">
+  <app-weekday [weekday]="weekday"></app-weekday>
 </p>

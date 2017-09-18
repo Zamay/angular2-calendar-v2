@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router} from "@angular/router";
+import {DataService} from "../service/data.service";
 
 @Component({
   selector: 'app-weeks',
@@ -8,9 +9,11 @@ import {Router} from "@angular/router";
 })
 export class WeeksComponent implements OnInit {
 
-  constructor() { }
+  @Input() weeks: Array<any>;
+  constructor(
+    private dateService :DataService
+  ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

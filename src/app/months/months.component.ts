@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute, Params} from "@angular/router";
+import {DataService} from "../service/data.service";
 
 @Component({
   selector: 'app-months',
@@ -8,9 +9,18 @@ import {Router} from "@angular/router";
 })
 export class MonthsComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  public asd;
+  public month: Array<any>;
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private dateService :DataService
+  ) {
+  }
   ngOnInit() {
+    // this.activatedRoute.params.subscribe((params: Params) => console.log(params));
+    // this.month = this.dateService.showCurrMonth();
+    // console.log(this.asd);
   }
 
   goBack(): void {

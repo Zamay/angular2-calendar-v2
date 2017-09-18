@@ -2,13 +2,16 @@
   months works!
 </p>
 
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-</ul>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th (click)="goBack($event)">Выбрать Месяц</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let weeks of month" (click)="onSelect(month)">
+  <tr>
+    <app-weeks [weeks]="weeks"></app-weeks>
+  </tr>
+  </tbody>
+</table>
 
-
-<button (click)="goBack($event)">Месяцы</button>

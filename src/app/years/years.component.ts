@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 
+import {DataService} from "../service/data.service";
+
 @Component({
   selector: 'app-years',
   templateUrl: './years.component.html',
@@ -8,14 +10,19 @@ import {Router} from "@angular/router";
 })
 export class YearsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public months: any;
+  constructor(
+    private router: Router,
+    private dateService :DataService
+  ) { }
 
   ngOnInit() {
+    this.months = this.dateService.getMonths(); // ["January" , "January" , ...]
   }
 
   onSelect(selected: any) {
     this.router.navigate(["months"]);
-    // this.router.navigate(["months", selected.id]);
+    // this.router.navigate(["months", selected]);
   }
 
   goBack(): void {

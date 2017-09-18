@@ -11,18 +11,18 @@ import { MonthsModule }  from './months/months.module';
 
 import { routes }        from './app.routes';
 
+import { DataService }   from './service/data.service';
+
 @NgModule({
   imports: [
     BrowserModule,
     DecadeModule,
     YearsModule,
     MonthsModule,
-    WeeksModule,
-    WeekdayModule,
     RouterModule.forRoot(routes)
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

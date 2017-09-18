@@ -2,10 +2,15 @@
   decade works!
 </p>
 
-<ul (click)="onSelect(2)">
-  <li>dsad</li>
-  <li>dsad</li>
-  <li>dsad</li>
-  <li>dsad</li>
-  <li>dsad</li>
-</ul>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Года</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let year of years" (click)="onSelect(years)">
+  <tr>
+    <td>{{year.year}}</td>
+  </tr>
+  </tbody>
+</table>

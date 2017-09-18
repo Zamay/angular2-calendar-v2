@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MonthsComponent} from "./months.component";
+import {WeeksModule} from "../weeks/weeks.module";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    WeeksModule
   ],
   declarations: [MonthsComponent],
   exports: [MonthsComponent]

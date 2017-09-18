@@ -25,8 +25,8 @@ export const routes: Routes = [
     path: "months",
     component: MonthsComponent
   },
-  {
-    path: '**',
-    redirectTo: 'months'
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: 'months'
+  // }
 ];
