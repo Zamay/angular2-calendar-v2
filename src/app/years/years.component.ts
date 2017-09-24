@@ -21,7 +21,11 @@ export class YearsComponent implements OnInit {
   }
 
   onSelect(selected: any) {
+    let obj = this.dateService.getYearAndMonth();
+    obj.month = selected;
+    this.dateService.setYearAndMonth(obj.year, obj.month);
     this.router.navigate(["months"]);
+
     // this.router.navigate(["months", selected]);
   }
 

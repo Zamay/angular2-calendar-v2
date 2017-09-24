@@ -11,7 +11,6 @@ export class WeekdayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.weekday);
   }
 
 }

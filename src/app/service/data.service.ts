@@ -8,9 +8,11 @@ export class DataService {
   public currMonth: number;
   public currYear: number;
   public currDay: number;
+  public YearAndMonth: any;
 
   constructor() {
     this.totalDate();
+    this.setYearAndMonth(this.currYear, this.currMonth)
   }
 
   public totalDate() {
@@ -42,8 +44,18 @@ export class DataService {
     return [this.MONTHS[this.currMonth], this.currYear, obj_arrDay];
   }
 
-  public showCurrMonth() {
-    return this.createWeeksAndMonth(this.currYear, this.currMonth);
+  // public showCurrMonth() {
+  //   return this.createWeeksAndMonth(this.currYear, this.currMonth);
+  // }
+
+  public setYearAndMonth(y?:any , m?:any ) {
+    this.YearAndMonth = {
+      year: y,
+      month: m
+    }
+  }
+  public getYearAndMonth() {
+    return this.YearAndMonth;
   }
 
   public getTenYears() {
@@ -69,7 +81,6 @@ export class DataService {
   public getMonth(month: any, year: any) {
     return this.createWeeksAndMonth(month, year)
   }
-
 
   // получение даты
   public createWeeksAndMonth(y, m) {

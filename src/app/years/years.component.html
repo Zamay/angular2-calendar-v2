@@ -8,7 +8,7 @@
     <th (click)="goBack($event)">Выбрать год</th>
   </tr>
   </thead>
-  <tbody *ngFor="let month of months" (click)="onSelect(month)">
+  <tbody *ngFor="let month of months; let i = index" (click)="onSelect(i)">
   <tr>
     <td>{{month}}</td>
   </tr>

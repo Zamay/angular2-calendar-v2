@@ -10,9 +10,7 @@ import {DataService} from "../service/data.service";
 export class WeeksComponent implements OnInit {
 
   @Input() weeks: Array<any>;
-  constructor(
-    private dateService :DataService
-  ) { }
+  constructor() { }
 
   ngOnInit() { }
 

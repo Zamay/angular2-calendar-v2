@@ -12,6 +12,7 @@ import { MonthsModule }  from './months/months.module';
 import { routes }        from './app.routes';
 
 import { DataService }   from './service/data.service';
+import { ShareableStreamStoreService } from "./service/shareable-stream-store.service";
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { DataService }   from './service/data.service';
     RouterModule.forRoot(routes)
   ],
   declarations: [AppComponent],
-  providers: [DataService],
+  providers: [DataService, ShareableStreamStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

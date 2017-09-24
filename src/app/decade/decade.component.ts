@@ -22,6 +22,10 @@ export class DecadeComponent implements OnInit {
 
   onSelect(selected: any) {
     // this.router.navigate(["years", selected.id]);
+    let obj = this.dateService.getYearAndMonth();
+    obj.year = selected.year;
+
+    this.dateService.setYearAndMonth(obj.year, obj.month);
     this.router.navigate(["years"]);
   }
 }

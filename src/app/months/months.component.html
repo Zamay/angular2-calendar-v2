@@ -8,7 +8,7 @@
     <th (click)="goBack($event)">Выбрать Месяц</th>
   </tr>
   </thead>
-  <tbody *ngFor="let weeks of month" (click)="onSelect(month)">
+  <tbody *ngFor="let weeks of month">
   <tr>
     <app-weeks [weeks]="weeks"></app-weeks>
   </tr>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 import {DataService} from "../service/data.service";
+import {Subscription} from "rxjs/Subscription";
+import {ShareableStreamStoreService} from "../service/shareable-stream-store.service";
 
 @Component({
   selector: 'app-months',
@@ -9,18 +11,19 @@ import {DataService} from "../service/data.service";
 })
 export class MonthsComponent implements OnInit {
 
-  public asd;
   public month: Array<any>;
+  public subscription: Subscription;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dateService :DataService
+    private dateService :DataService,
+    private shareableStreamStoreService: ShareableStreamStoreService
   ) {
+
   }
   ngOnInit() {
-    // this.activatedRoute.params.subscribe((params: Params) => console.log(params));
-    // this.month = this.dateService.showCurrMonth();
-    // console.log(this.asd);
+    let obj = this.dateService.getYearAndMonth();
+    this.month = this.dateService.getMonth(obj.year, obj.month);
   }
 
   goBack(): void {
